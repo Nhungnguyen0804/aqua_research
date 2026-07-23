@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-
+import { Sparkle } from "lucide-react";
+import React from "react";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Research", path: "/research" },
@@ -9,21 +10,26 @@ const navItems = [
 function Navbar() {
   return (
     <div className="navbar">
-      <nav className="flex items-center gap-5 text-[0.8rem] md:gap-10 md:text-[1.2rem]">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `transition-colors ${
-                isActive
-                  ? "opacity-100 font-semibold text-blue-600"
-                  : "opacity-75 text-gray-600 hover:text-blue-600"
-              }`
-            }
-          >
-            {item.name}
-          </NavLink>
+      <nav className="flex items-center gap-3 md:gap-6">
+        {navItems.map((item, index) => (
+          <React.Fragment key={item.path}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `transition-colors ${
+                  isActive
+                    ? "font-semibold text-blue-600"
+                    : "text-gray-600 hover:text-blue-600"
+                }`
+              }
+            >
+              {item.name}
+            </NavLink>
+
+            {index !== navItems.length - 1 && (
+              <Sparkle size={20} fill="skyblue" stroke="none" />
+            )}
+          </React.Fragment>
         ))}
       </nav>
     </div>
