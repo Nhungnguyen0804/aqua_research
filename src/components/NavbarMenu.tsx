@@ -18,7 +18,7 @@ function Navbar() {
               className={({ isActive }) =>
                 `transition-colors ${
                   isActive
-                    ? "font-semibold text-blue-600"
+                    ? "font-semibold text-blue-600 bg-blue-200 px-4 py-2 rounded-lg "
                     : "text-gray-600 hover:text-blue-600"
                 }`
               }

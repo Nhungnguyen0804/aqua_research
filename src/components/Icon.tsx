@@ -7,7 +7,7 @@ interface ImageIconProps {
 }
 export const ImageIcon = ({
   src,
-  width = "32px",
+  width,
   height = "32px",
   className,
   alt,

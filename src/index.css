@@ -20,7 +20,7 @@ body,
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
 
-  background: #f5f7fa;
+  /* background: #f5f7fa; */
   color: #222;
 }
 
@@ -31,6 +31,20 @@ a {
 
 button {
   cursor: pointer;
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src:
+    url("../../../assets/fonts/Pacifico-Regular.woff2") format("woff2"),
+    url("../../../assets/fonts/Pacifico-Regular.woff") format("woff"),
+    url("../../../assets/fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
 }
 
 @theme inline {
@@ -155,4 +169,17 @@ button {
   html {
     @apply font-sans;
   }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px) url(#lg-filter) blur(12px) saturate(1.5)
+    brightness(1.1);
+  -webkit-backdrop-filter: blur(48px) saturate(1.8) brightness(1.15)
+    contrast(1.05);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 0 12px rgba(255, 255, 255, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.2);
 }

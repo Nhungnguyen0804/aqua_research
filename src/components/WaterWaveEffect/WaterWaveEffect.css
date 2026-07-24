@@ -1,0 +1,81 @@
+/* ----------------------------------------------------------------------------
+ 
+    .lrc-root--card : dùng như 1 thẻ (card) trong lưới/gallery, có bo góc + đổ bóng
+    .lrc-root--fill  : phủ kín 100% phần tử cha, dùng làm BACKGROUND
+   ---------------------------------------------------------------------------- */
+
+/* Khung ngoài cùng: chỉ định vị trí + cắt phần tràn ra ngoài */
+.lrc-root {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* card: bo góc, đổ bóng, tự nâng nhẹ lên khi hover */
+.lrc-root--card {
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1; /* card vuông giống thiết kế gốc, có thể override qua className riêng */
+}
+.lrc-root--card:hover {
+  transform: translateY(-5px);
+}
+
+/* fill: chiếm toàn bộ phần tử cha  */
+.lrc-root--fill {
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Vùng chứa ảnh + canvas, luôn khớp kích thước với .lrc-root */
+.lrc-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ảnh nền, phủ kín và giữ tỉ lệ (object-fit: cover) */
+.lrc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Canvas vẽ hiệu ứng gợn sóng, nằm đè lên ảnh, chỉ hiện rõ khi hover */
+.lrc-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* để sự kiện chuột vẫn "xuyên qua" tới phần tử cha */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lrc-root:hover .lrc-canvas {
+  opacity: 1;
+}
+
+/* Lớp phủ nội dung (caption, tiêu đề, nút...) nằm trên cùng */
+.lrc-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none; /* mặc định không chặn chuột; bật lại ở phần tử con cần click được */
+}
+
+/* khi cài đặt "giảm chuyển động" của hệ điều hành/trình duyệt => tắt */
+@media (prefers-reduced-motion: reduce) {
+  .lrc-root--card,
+  .lrc-canvas {
+    transition: none;
+  }
+}

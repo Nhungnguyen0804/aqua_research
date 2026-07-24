@@ -1,0 +1,188 @@
+/* ==========================
+   Base Button
+========================== */
+.btn-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9px 16px;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  border-radius: 10px;
+
+  background: transparent;
+}
+
+.button-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================
+   Effect: Color Change
+========================== */
+
+.effect-color-change {
+  transition: color 1s;
+  border: 2px solid white;
+  color: white;
+}
+
+.effect-color-change::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  left: -50px;
+  width: 150%;
+
+  background: #ad0070;
+
+  transform: scaleX(0) skewX(35deg);
+  transform-origin: left;
+
+  transition: transform 1s;
+
+  z-index: 1;
+}
+
+.effect-color-change:hover {
+  color: white;
+}
+
+.effect-color-change:hover::before {
+  transform: scaleX(1) skewX(35deg);
+}
+
+/* =========================================================================================== */
+/* .effect-water {
+  position: relative;
+
+  background: rgba(0, 202, 252, 0.503);
+
+  backdrop-filter: blur(2px) url(#lg-filter) blur(4px) saturate(1.5)
+    brightness(1.1);
+
+  -webkit-backdrop-filter: blur(16px) saturate(1.8) brightness(1.15)
+    contrast(1.05);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 0 8px rgba(255, 255, 255, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.effect-water:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.effect-water:active {
+  transform: scale(0.98);
+}
+
+.effect-water::before {
+  content: "";
+
+  position: absolute;
+  inset: 2px;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08) 35%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+} */
+
+.effect-water {
+  position: relative;
+  overflow: hidden;
+
+  color: white;
+  font-weight: 700;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: linear-gradient(to bottom, #49d3ff 0%, #25b8f4 45%, #18a5ef 100%);
+
+  box-shadow:
+    inset 0 2px 5px rgba(255, 255, 255, 0.55),
+    inset 0 -3px 8px rgba(0, 120, 220, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.18);
+
+  transition: 0.25s;
+}
+
+.effect-water::before {
+  content: "";
+  position: absolute;
+
+  left: 8px;
+  right: 8px;
+  top: 5px;
+
+  height: 48%;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0)
+  );
+
+  pointer-events: none;
+}
+
+.effect-water::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  box-shadow:
+    inset 0 0 15px rgba(255, 255, 255, 0.18),
+    inset 0 0 25px rgba(0, 255, 255, 0.08);
+
+  pointer-events: none;
+}
+
+.effect-water:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -3px 8px rgba(0, 120, 220, 0.45),
+    0 8px 18px rgba(0, 0, 0, 0.25);
+}
