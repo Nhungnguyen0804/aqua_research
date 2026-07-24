@@ -7,12 +7,14 @@ import { img } from "../assets/img";
 export default function MainLayout() {
   return (
     <div className="flex justify-center items-center">
-      <WaterWaveEffect imageSrc={img.bg} fill />
       <div className="  flex min-h-screen flex-col w-full items-center">
         <Header />
-
-        <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-8  bg-red-500  ">
-          <Outlet />
+        {/* ko chặn chuột, bật tại từng card  */}
+        <main className=" relative w-full  flex-1 px-6 py-8    ">
+          <WaterWaveEffect imageSrc={img.bg} fill={true} />
+          <div className="pointer-events-none relative z-10">
+            <Outlet />
+          </div>
         </main>
 
         <Footer />

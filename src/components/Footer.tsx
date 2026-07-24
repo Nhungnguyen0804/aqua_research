@@ -4,10 +4,10 @@ export default function Footer() {
   const sizeIcon = "25px";
   const minWidth = "10px";
   return (
-    <footer className="glass border-t bg-white w-full flex flex-col items-center">
+    <footer className="glass border-t bg-white w-full flex flex-col items-center z-1">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-center px-6">
-        <p className="text-sm text-black-900 z-2">
-          © 2026 LitResearcher · AI Literature Review Agent
+        <p className="text-sm text-black-900 ">
+          © 2026 Aqua Research AI · AI Literature Review Agent ~ Nhung Nguyen
         </p>
       </div>
       <div

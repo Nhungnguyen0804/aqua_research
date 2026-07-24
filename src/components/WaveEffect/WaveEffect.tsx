@@ -12,7 +12,7 @@ type Props = {
   height?: string | number;
 };
 
-export default function WaveBackground({
+export default function WaveEffect({
   children,
   className = "",
   color = "#3b82f6",

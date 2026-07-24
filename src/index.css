@@ -33,6 +33,10 @@ button {
   cursor: pointer;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+}
 @font-face {
   font-family: "Pacifico";
   src:

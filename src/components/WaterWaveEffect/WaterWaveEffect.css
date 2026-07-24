@@ -24,10 +24,10 @@
 
 /* fill: chiếm toàn bộ phần tử cha  */
 .lrc-root--fill {
-  position: absolute;
+  position: fixed;
   inset: 0; /* top/right/bottom/left: 0 */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   border-radius: 0;
   box-shadow: none;
 }
@@ -68,7 +68,7 @@
 .lrc-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none; /* mặc định không chặn chuột; bật lại ở phần tử con cần click được */
 }
 
