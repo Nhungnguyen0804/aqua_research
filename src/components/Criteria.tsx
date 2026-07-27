@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
-import SearchIcon from "@mui/icons-material/Search";
+
 import ListItemIcon from "@mui/material/ListItemIcon";
 import DisabledByDefaultIcon from "@mui/icons-material/DisabledByDefault";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";

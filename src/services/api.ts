@@ -6,7 +6,7 @@ import type {
 } from "./type";
 
 // export const API_BASE_URL = "http://localhost:8000";
-export const API_BASE_URL = "https://aqua-research.vercel.app/";
+export const API_BASE_URL = "https://aqua-research.vercel.app";
 
 export type NodeName =
   | "research_question_node"
