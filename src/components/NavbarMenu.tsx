@@ -3,7 +3,7 @@ import { Sparkle } from "lucide-react";
 import React from "react";
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Research", path: "/research" },
+  { name: "History", path: "/history" },
   { name: "Chat", path: "/chat" },
 ];
 

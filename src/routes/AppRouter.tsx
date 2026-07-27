@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/Home";
-import Research from "../pages/Research";
-import About from "../pages/About";
+import History from "../pages/History";
+import Chat from "../pages/Chat";
 import NotFound from "../pages/NotFound";
 export default function AppRouter() {
   return (
@@ -13,9 +13,9 @@ export default function AppRouter() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
 
-          <Route path="/research" element={<Research />} />
+          <Route path="/history" element={<History />} />
 
-          <Route path="/about" element={<About />} />
+          <Route path="/chat" element={<Chat />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

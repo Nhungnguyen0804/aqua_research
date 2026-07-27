@@ -2,8 +2,8 @@ import Card from "@mui/material/Card";
 import BaseCard from "./BaseCard";
 import Typography from "@mui/material/Typography";
 import CircleCard from "./CircleCard";
-import type { Pico } from "../../services/picoApi";
-
+import type { Pico } from "../../services/type";
+import Divider from "@mui/material/Divider";
 interface PicoChildCardProps {
   char?: string;
   namePico?: string;
@@ -39,15 +39,20 @@ function PicoChildCard({ char, namePico, contentPico }: PicoChildCardProps) {
 }
 
 interface PicoCardProps {
+  title: string;
   pico: Pico;
 }
-export default function PicoCard({ pico }: PicoCardProps) {
+export default function PicoCard({ title, pico }: PicoCardProps) {
   return (
     <BaseCard>
       <div className="flex flex-col">
         <Typography variant="h2">
-          <span className="logo text-blue-400"> Research Question</span>
+          <span className="logo text-blue-400"> {title}</span>
+          <Divider
+            sx={{ borderWidth: 3, borderColor: "skyblue", width: "100%" }}
+          />
         </Typography>
+        <p>{pico.research_question}</p>
         <div className="grid gap-6 md:grid-cols-4  w-full">
           <PicoChildCard
             char="P"

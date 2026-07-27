@@ -9,7 +9,7 @@ export default function BaseCard({ children }: any) {
         borderWidth: 3,
         display: "flex",
         margin: 4,
-        padding: 3,
+        padding: 7,
       }}
     >
       {children}

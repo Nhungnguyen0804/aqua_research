@@ -32,7 +32,7 @@ export default function TopicCard({
         <ImageIcon src={img.meo} className="w-full h-auto" />
       </div>
       <div className="w-2/3 flex flex-col ">
-        <CardContent sx={{ margin: 2 }}>
+        <CardContent>
           {" "}
           <Typography variant="h2">
             <span className="logo text-blue-400"> Aqua Research AI</span>
@@ -43,25 +43,50 @@ export default function TopicCard({
             efficiently.
           </Typography>
         </CardContent>
-        <CardActions
-          sx={{ display: "flex", flexDirection: "column", margin: 4 }}
-        >
+        <CardActions sx={{ display: "flex", flexDirection: "column" }}>
           <Typography variant="h4">
             <span className="logo text-blue-400"> Search TOPIC</span>
           </Typography>
           <TextField
             multiline
             rows={4}
-            placeholder="Type something..."
+            placeholder="Type topic..."
             variant="outlined"
             fullWidth
             onChange={(e) => setTopic(e.target.value)}
             sx={{
-              marginBottom: 4,
-              marginRight: 4,
               pointerEvents: "auto",
-              borderColor: "black",
-              borderWidth: 5,
+              mb: 4,
+              mr: 4,
+
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "16px",
+                backgroundColor: "#90caf9",
+                backdropFilter: "blur(12px)",
+
+                "& fieldset": {},
+
+                "&:hover fieldset": {
+                  borderColor: "#90caf9",
+                  borderWidth: 3,
+                },
+
+                "&.Mui-focused fieldset": {
+                  borderColor: "#42a5f5",
+                  borderWidth: 3,
+                },
+              },
+
+              "& textarea": {
+                color: "black",
+                fontSize: "1rem",
+                padding: "16px",
+              },
+
+              "& textarea::placeholder": {
+                color: "rgba(255,255,255,.6)",
+                opacity: 1,
+              },
             }}
           />
           <Button

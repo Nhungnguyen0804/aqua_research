@@ -20,7 +20,7 @@ export default function UserAvatar() {
   return (
     <DropdownMenu>
       {/* phần bấm vào */}
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger>
         <Avatar className="cursor-pointer h-12 w-12">
           <AvatarImage src="https://github.com/shadcn.png" />
 
