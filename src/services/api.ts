@@ -6,9 +6,10 @@ import type {
 } from "./type";
 
 // export const API_BASE_URL = "http://localhost:8000";
-// export const API_BASE_URL = "https://aqua-research.vercel.app";
-export const API_BASE_URL =
-  "https://aqua-research-api-b741ca04.fastapicloud.dev";
+// export const API_BASE_URL = "http://127.0.0.1:8000";
+export const API_BASE_URL = "https://aqua-research.vercel.app";
+// export const API_BASE_URL =
+// "https://aqua-research-api-b741ca04.fastapicloud.dev"; # het ram
 
 export type NodeName =
   | "research_question_node"
